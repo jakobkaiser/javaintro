@@ -126,7 +126,7 @@ public class MyGUI {
 				p.setOrt(getOrt().getText());
 				try {
 					p.setPlz(Integer.parseInt(getPlz().getText()));
-					//System.out.println(p);
+					// System.out.println(p);
 				} catch (NumberFormatException nfe) {
 					System.out.println("Fehler bei Plz");
 
@@ -134,52 +134,46 @@ public class MyGUI {
 					mb.setText("Fehler");
 					mb.setMessage("PLZ im falschen Format");
 					mb.open();
-					System.out.println("mb closed");}
-					Person.getPersonenListe().add(p);
-					clearMask();
-					//
-					
-					
-					for (Person p1 : Person.getPersonenListe())
-						System.out.println(p1);
-			        
-				
-				
+					System.out.println("mb closed");
+				}
+				Person.getPersonenListe().add(p);
+				clearMask();
+				//
+
+				for (Person p1 : Person.getPersonenListe())
+					System.out.println(p1);
 
 			}
-       
-         protected void clearMask() {
-        	 getVorname().setText("");
-        	 getNachname().setText("");
-        	 getStrasse().setText("");
-        	 getOrt().setText("");
-        	 getPlz().setText("");
-         }
-         
-         
+
+			protected void clearMask() {
+				getVorname().setText("");
+				getNachname().setText("");
+				getStrasse().setText("");
+				getOrt().setText("");
+				getPlz().setText("");
+			}
+
 		});
 		btnNewButton.setBounds(215, 378, 142, 25);
 		btnNewButton.setText("Good Morning");
-		
+
 		btnNewButton_1 = new Button(shell, SWT.NONE);
 		btnNewButton_1.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
-		
+
 				Person.write2JSON();
-			
-			{MessageBox mb = new MessageBox(shell, SWT.ICON_INFORMATION| SWT.OK);
-			mb.setText("Gesendet");
-			mb.setMessage("Datei wurde zu JSON gesendet");
-			mb.open();
+
+				MessageBox mb = new MessageBox(shell, SWT.ICON_INFORMATION | SWT.OK);
+				mb.setText("Gesendet");
+				mb.setMessage("Datei wurde zu JSON gesendet");
+				mb.open();
+
 			}
-			}});
-		
-		
-	
+		});
+
 		btnNewButton_1.setBounds(215, 347, 142, 25);
 		btnNewButton_1.setText("write 2 jason");
-		
 
 	}
 
@@ -207,6 +201,7 @@ public class MyGUI {
 	public Label getLblPlz() {
 		return lblPlz;
 	}
+
 	public Button getBtnNewButton_1() {
 		return btnNewButton_1;
 	}
