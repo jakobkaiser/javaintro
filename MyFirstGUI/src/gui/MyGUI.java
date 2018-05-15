@@ -179,7 +179,8 @@ public class MyGUI {
 		btnNewButton_2.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
-				
+				for (Person p2 : personenRead)
+					System.out.println(p2);
 			}
 		});
 		btnNewButton_2.setBounds(215, 316, 142, 25);
