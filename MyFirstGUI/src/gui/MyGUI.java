@@ -174,6 +174,16 @@ public class MyGUI {
 
 		btnNewButton_1.setBounds(215, 347, 142, 25);
 		btnNewButton_1.setText("write 2 jason");
+		
+		Button btnNewButton_2 = new Button(shell, SWT.NONE);
+		btnNewButton_2.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				
+			}
+		});
+		btnNewButton_2.setBounds(215, 316, 142, 25);
+		btnNewButton_2.setText("Write from JSON");
 
 	}
 
@@ -206,3 +216,4 @@ public class MyGUI {
 		return btnNewButton_1;
 	}
 }
+//test
