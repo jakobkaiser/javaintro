@@ -1,5 +1,6 @@
 package data;
 
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -14,6 +15,28 @@ import com.google.gson.reflect.TypeToken;
 
 public class Person {
 
+	
+	
+	public static void readfromJSON() {
+		Reader reader;
+		try {
+			reader = new FileReader("D:\\Temp\\output2.json");
+		
+		Gson gson = new GsonBuilder().serializeNulls().create();
+		
+		ArrayList<Person> personenread = new ArrayList<>();
+		Type listType = new TypeToken <ArrayList<Person>>(){}.getType();
+		personenread = gson.fromJson(reader,listType);
+		for (int i = 0; i < personenread.size(); i++) {
+
+			System.out.println(personenread.get(i));
+		};
+		} catch (FileNotFoundException e) {			
+			e.printStackTrace();
+		}
+	};
+	//MFU CT
+	
 	private static ArrayList<Person> personenListe = new ArrayList<>();
 
 	public static ArrayList<Person> getPersonenListe() {
@@ -22,7 +45,7 @@ public class Person {
 
 	public static void write2JSON() {
 		try {
-			Writer writer = new FileWriter("C:\\temp\\output.json");
+			Writer writer = new FileWriter("D:\\Temp\\output.json");
 			Gson gson = new GsonBuilder().serializeNulls().create();
 			gson.toJson(Person.getPersonenListe(), writer);
 			
@@ -39,7 +62,7 @@ public class Person {
 
 	public static void readFromJSON(){
 		try {
-			Writer writer = new FileWriter("C:\\temp\\output.json");
+			Writer writer = new FileWriter("D:\\Temp\\output.json");
 			Gson gson = new GsonBuilder().serializeNulls().create();
 
 			ArrayList<Person> personen = new ArrayList<>();
@@ -49,7 +72,7 @@ public class Person {
 			writer.flush();
 			writer.close();
 			//
-			Reader r = new FileReader("C:\\temp\\output.json");
+			Reader r = new FileReader("D:\\Temp\\output.json");
 			ArrayList<Person> personenRead = new ArrayList<>();
 			Type listType = new TypeToken<ArrayList<Person>>() {
 			}.getType();

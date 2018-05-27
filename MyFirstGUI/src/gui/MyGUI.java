@@ -22,6 +22,7 @@ import org.eclipse.wb.swt.SWTResourceManager;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import org.eclipse.swt.widgets.List;
 
 public class MyGUI {
 
@@ -33,6 +34,7 @@ public class MyGUI {
 	private Text plz;
 	private Label lblPlz;
 	private Button btnNewButton_1;
+	private List guiList;
 
 	/**
 	 * Launch the application.
@@ -68,9 +70,8 @@ public class MyGUI {
 	 */
 	protected void createContents() {
 		shell = new Shell();
-		shell.setBackgroundImage(SWTResourceManager
-				.getImage("\\\\ams-gym-pfs\\schuelerprofiledata\\jakobkaiser\\Downloads\\Waiter2.jpg"));
-		shell.setBackground(SWTResourceManager.getColor(SWT.COLOR_DARK_CYAN));
+		shell.setBackgroundImage(SWTResourceManager.getImage("C:\\Users\\Jakob\\Pictures\\iwas\\1.jpg"));
+		shell.setBackground(SWTResourceManager.getColor(0, 128, 128));
 		shell.setSize(624, 528);
 		shell.setText("SWT Application");
 
@@ -154,6 +155,9 @@ public class MyGUI {
 			}
 
 		});
+		
+		
+		
 		btnNewButton.setBounds(215, 378, 142, 25);
 		btnNewButton.setText("Good Morning");
 
@@ -175,16 +179,26 @@ public class MyGUI {
 		btnNewButton_1.setBounds(215, 347, 142, 25);
 		btnNewButton_1.setText("write 2 jason");
 		
-		Button btnNewButton_2 = new Button(shell, SWT.NONE);
-		btnNewButton_2.addSelectionListener(new SelectionAdapter() {
+		Button ReadFromJson = new Button(shell, SWT.NONE);
+		ReadFromJson.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
-				for (Person p2 : personenRead)
-					System.out.println(p2);
+			guiList.add(Person.getPersonenListe().toString());
 			}
 		});
-		btnNewButton_2.setBounds(215, 316, 142, 25);
-		btnNewButton_2.setText("Write from JSON");
+		ReadFromJson.setBounds(215, 316, 142, 25);
+		ReadFromJson.setText("ReadFromJson");
+		
+		List guiList = new List(shell, SWT.BORDER);
+		guiList.setBounds(286, 7, 297, 287);
+		
+		Button btnReadfromjson = new Button(shell, SWT.NONE);
+		btnReadfromjson.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				Person.readfromJSON();
+			}
+		});
 
 	}
 
