@@ -70,7 +70,7 @@ public class MyGUI {
 	 */
 	protected void createContents() {
 		shell = new Shell();
-		shell.setBackgroundImage(SWTResourceManager.getImage("C:\\Users\\Jakob\\Pictures\\iwas\\1.jpg"));
+		shell.setBackgroundImage(SWTResourceManager.getImage("\\\\ams-gym-pfs\\schuelerprofiledata\\jakobkaiser\\Downloads\\Waiter2.jpg"));
 		shell.setBackground(SWTResourceManager.getColor(0, 128, 128));
 		shell.setSize(624, 528);
 		shell.setText("SWT Application");
@@ -158,7 +158,7 @@ public class MyGUI {
 		
 		
 		
-		btnNewButton.setBounds(215, 378, 142, 25);
+		btnNewButton.setBounds(177, 388, 142, 25);
 		btnNewButton.setText("Good Morning");
 
 		btnNewButton_1 = new Button(shell, SWT.NONE);
@@ -176,8 +176,12 @@ public class MyGUI {
 			}
 		});
 
-		btnNewButton_1.setBounds(215, 347, 142, 25);
+		btnNewButton_1.setBounds(177, 357, 142, 25);
 		btnNewButton_1.setText("write 2 jason");
+		
+		List guiList = new List(shell, SWT.BORDER);
+		guiList.setBackground(SWTResourceManager.getColor(SWT.COLOR_WIDGET_HIGHLIGHT_SHADOW));
+		guiList.setBounds(325, 245, 273, 234);
 		
 		Button ReadFromJson = new Button(shell, SWT.NONE);
 		ReadFromJson.addSelectionListener(new SelectionAdapter() {
@@ -186,11 +190,10 @@ public class MyGUI {
 			guiList.add(Person.getPersonenListe().toString());
 			}
 		});
-		ReadFromJson.setBounds(215, 316, 142, 25);
+		ReadFromJson.setBounds(177, 326, 142, 25);
 		ReadFromJson.setText("ReadFromJson");
 		
-		List guiList = new List(shell, SWT.BORDER);
-		guiList.setBounds(286, 7, 297, 287);
+		
 		
 		Button btnReadfromjson = new Button(shell, SWT.NONE);
 		btnReadfromjson.addSelectionListener(new SelectionAdapter() {

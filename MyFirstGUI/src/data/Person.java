@@ -20,7 +20,7 @@ public class Person {
 	public static void readfromJSON() {
 		Reader reader;
 		try {
-			reader = new FileReader("D:\\Temp\\output2.json");
+			reader = new FileReader("C:\\temp\\output2.json");
 		
 		Gson gson = new GsonBuilder().serializeNulls().create();
 		
@@ -45,7 +45,7 @@ public class Person {
 
 	public static void write2JSON() {
 		try {
-			Writer writer = new FileWriter("D:\\Temp\\output.json");
+			Writer writer = new FileWriter("C:\\temp\\output.json");
 			Gson gson = new GsonBuilder().serializeNulls().create();
 			gson.toJson(Person.getPersonenListe(), writer);
 			
@@ -62,7 +62,7 @@ public class Person {
 
 	public static void readFromJSON(){
 		try {
-			Writer writer = new FileWriter("D:\\Temp\\output.json");
+			Writer writer = new FileWriter("C:\\temp\\output.json");
 			Gson gson = new GsonBuilder().serializeNulls().create();
 
 			ArrayList<Person> personen = new ArrayList<>();
@@ -72,7 +72,7 @@ public class Person {
 			writer.flush();
 			writer.close();
 			//
-			Reader r = new FileReader("D:\\Temp\\output.json");
+			Reader r = new FileReader("C:\\temp\\output.json");
 			ArrayList<Person> personenRead = new ArrayList<>();
 			Type listType = new TypeToken<ArrayList<Person>>() {
 			}.getType();
@@ -185,3 +185,21 @@ public class Person {
 // button machen aus Datei lesen
 //private List GuiListe
 //get GuiListe()
+
+
+// proejtkt rechtsclick configure maven
+// unter versions
+//<dependencies>
+//<dependency>
+
+//<groupId>org.eclipse.swt</groupId>
+
+//<artifactId>org.eclipse.swt.win32.win32.x86</artifactId>
+
+//<version>4.3</version>
+
+//<scope>provided</scope>
+
+//</dependency>
+//</dependencies> 
+// projekt rechtsclick buildpath alles auser gson und ordner removen
