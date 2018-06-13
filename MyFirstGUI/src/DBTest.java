@@ -16,12 +16,12 @@ public class DBTest {
 
 	public DBTest() throws SQLException {
 
-		Connection conn = DriverManager.getConnection("jdbc:ucanaccess://C:/Users/jakobkaiser/dbtest.accdb;memory=false");
+		Connection conn = DriverManager.getConnection("jdbc:ucanaccess://C:/Users/Jakob/dbtest.accdb;memory=false");
 
 		Statement stmt = conn.createStatement();
 		stmt.execute("INSERT INTO address ( vorname, nachname, ort, plz ) "
-				+ "VALUES ('Jakob', 'Omega', 'Rubinstrasse', 14)");
-
+				+ "VALUES ('Jakob', 'Omega', 'Rubinstrasse', 14)"
+		        + "VALUES ('Mario', 'Kart' 'Magentaroad', 8)");
 	}
 
 }
